@@ -14,16 +14,23 @@ body {
 
 #app-container {
   display: flex;
-  width: 60%;
+  width: 35%;
+  padding-block: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin-top: 2rem;
+  background-color: rgb(24, 24, 24);
+  border-radius: 10px;
 }
 #container {
-  padding: 1rem;
+  padding-inline: 1rem;
   border-radius: 10px;
 }
 h1 {
   color: #ebebeb;
+  padding: 1rem;
+  border-radius: 7px;
+  border: black 2px solid;
+  background-color: rgb(16, 15, 15);
 }
