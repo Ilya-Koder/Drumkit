@@ -8,24 +8,32 @@ const drumMap = {
   snare: "w",
   hihat: "e",
   openhat: "r",
-  ride: "t",
-  tom: "y",
-  tink: "u",
-  clap: "i",
+  ride: "a",
+  tom: "s",
+  tink: "d",
+  clap: "f",
+  deep: "z",
+  short: "x",
+  tribal: "c",
+  bass: "v",
 };
 //loop over the keys in the drummap object
 //using the "for in" loop
 for (let key in drumMap) {
   //making drum button and set it to flex/column
   const drum = document.createElement("div");
-  drum.style.display = "flex";
-  drum.style.flexDirection = "column";
-  drum.style.padding = "0.5rem";
+  container.style.display = "grid";
+  container.style.gridTemplateColumns = "repeat(4, 1fr)";
+  container.style.gridGap = "1rem";
+  container.style.padding = "1rem";
 
   //Make drum button
   const button = document.createElement("button");
   button.style.height = "100px";
   button.style.width = "100px";
+  button.style.backgroundColor = "#59C3C3";
+  button.style.borderRadius = "10px";
+  button.style.cursor = "pointer";
 
   //drum names
   const drumTxt = document.createElement("p");
@@ -43,11 +51,11 @@ for (let key in drumMap) {
     // Play the drum sound
     new Audio(`./sounds/${key}.wav`).play();
     //onclick highlights keys
-    button.style.backgroundColor = "yellow";
+    button.style.backgroundColor = "#CAD2C5";
 
     // Reset background color after 500 ms
     setTimeout(() => {
-      button.style.backgroundColor = "";
+      button.style.backgroundColor = "#59C3C3";
     }, 500);
   });
 
@@ -70,11 +78,11 @@ window.addEventListener("keydown", (event) => {
       buttons.forEach((button) => {
         const shortcut = button.querySelector("kbd");
         if (shortcut.textContent === drumMap[key]) {
-          button.style.backgroundColor = "yellow";
+          button.style.backgroundColor = "#CAD2C5";
 
           // Reset background color after 500 ms
           setTimeout(() => {
-            button.style.backgroundColor = "";
+            button.style.backgroundColor = "#59C3C3";
           }, 500);
         }
       });
